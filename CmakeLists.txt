@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 3.19.0 FATAL_ERROR)
 project(practica)
 
-set(Boost_USE_STATIC_LIBS OFF)
-set(Boost_USE_MULTITHREADED ON)
-
 
 add_executable(practica  src/main.cpp)
 
