@@ -2,5 +2,12 @@ cmake_minimum_required(VERSION 3.19.0 FATAL_ERROR)
 project(practica)
 
 
-add_executable(practica  src/main.cpp)
+set(SOURCE_EXE src/main.cpp)
 
+include_directories(argparse)
+
+add_executable(main ${SOURCE_EXE})
+
+add_subdirectory(argparse)
+
+target_link_libraries(main argparse)
