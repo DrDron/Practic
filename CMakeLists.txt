@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
+project(gensin)
+set(SOURCES src/main.cpp)
+add_executable(${PROJECT_NAME} ${SOURCES})
+add_subdirectory(argparse)
+target_link_libraries(${PROJECT_NAME} argparse)
