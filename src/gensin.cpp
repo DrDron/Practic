@@ -1,6 +1,9 @@
 #define _USE_MATH_DEFINES
 #define _CRT_SECURE_NO_WARNINGS
 
+//#include <QApplication>
+//#include "mainwindow.h"
+
 #include <argparse/argparse.hpp>
 #include <math.h>
 #include <iostream>
@@ -98,7 +101,7 @@ int main(int argc, char *argv[])
         .action([](const string &value) { return stoi(value); });
 
     try {
-        parser.parse_args(argc, argv); // Example: ./main --flnm test.pcm --smplrt 44100 --amp 15000 --drt 4
+        parser.parse_args(argc, argv); // Example: ./main --flnm test.pcm --smplrt 44100 --amp 15000 --drt 4 --freq 440
     }
     catch (const std::runtime_error &err) {
         cout << err.what() << endl;
@@ -122,6 +125,11 @@ int main(int argc, char *argv[])
     }
 
     fclose(pcmFile);
-    
-    return 0;
+	
+	/*QApplication app(argc, argv);
+    MainWindow mainWindow;
+    mainWindow.show();
+	
+    return app.exec();*/
+	return 0;
 }
